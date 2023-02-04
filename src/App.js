@@ -1,5 +1,8 @@
 import {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
+import Form from './components/Form.js';
+import ImageContainer from './components/ImageContainer.js';
+import {dogRaces} from './data/dogRaces.js';
 
 const Container = styled.div(() => ({
   display: 'flex',
@@ -9,27 +12,22 @@ const Container = styled.div(() => ({
   gap: '2px'
 }))
 
-const ButtonsContainer = styled.div(() => ({
-  display: 'flex',
-  gap: '2px',
-  backgroundColor: 'red',
-  width: '400px',
-  height: '100px'
-}))
-
-const ImageContainer = styled.div(() => ({
-  backgroundColor: 'pink',
-  width: '500px',
-  height: '500px'
-}))
-
 
 const App = () => {
+  const [currentDogRace, setCurrentDogRace] = useState(dogRaces[0]);
   return (
     <Container className="App">
      <h1> Dog viewer</h1>
-     <ButtonsContainer></ButtonsContainer>
-     <ImageContainer></ImageContainer>
+     <Form 
+      width='400px' 
+      height='50px' 
+      list={dogRaces}
+      currentDogRace={currentDogRace}
+      setCurrentDogRace={setCurrentDogRace}
+      />
+     <ImageContainer 
+        dogRace={currentDogRace} 
+     />
     </Container>
   );
 }
