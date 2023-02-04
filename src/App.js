@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from 'react';
+import styled from '@emotion/styled';
 
-function App() {
+const Container = styled.div(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  gap: '2px'
+}))
+
+const ButtonsContainer = styled.div(() => ({
+  display: 'flex',
+  gap: '2px',
+  backgroundColor: 'red',
+  width: '400px',
+  height: '100px'
+}))
+
+const ImageContainer = styled.div(() => ({
+  backgroundColor: 'pink',
+  width: '500px',
+  height: '500px'
+}))
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+     <h1> Dog viewer</h1>
+     <ButtonsContainer></ButtonsContainer>
+     <ImageContainer></ImageContainer>
+    </Container>
   );
 }
 
