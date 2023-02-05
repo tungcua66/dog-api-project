@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import { styleOne } from '../styles/buttonStyles';
+// import Button from './Button';
 
 const Container = styled.div(({ width, height }) => ({
 	width,
 	height,
-	backgroundColor: 'red',
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',
@@ -13,9 +14,30 @@ const Container = styled.div(({ width, height }) => ({
 
 }));
 
-const SelectGroup = styled.select(() => ({
-	height: '100%',
+const SelectContainer = styled.div(() => ({
+	position: 'relative',
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+	padding: '0',
+	margin: '0',
+	height: '2em',
+	width: '10em',
+	boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+
 }));
+
+const Select = styled.select(() => ({
+	height: '100%',
+	width: '100%',
+	border: 'none',
+	backgroundColor: '#1d7874',
+	color: 'white',
+	font: '1.2em "Fira Sans, Arial, Roboto", sans-serif',
+	borderRadius: '5px',
+}));
+
+const Button = styled.button(() => ({ ...styleOne }));
 
 const Form = ({
 	width, height, list, currentDogRace, setCurrentDogRace,
@@ -26,25 +48,28 @@ const Form = ({
 		setCurrentDogRace({ ...currentDogRace, value: e.target.value });
 	};
 	return (
-		<Container width={width} height={height}>
-			<SelectGroup
-				value={selectedValue}
-				onChange={(e) => onChangeSelectHandler(e)}
-			>
-				{list.map((dogRace) => (
-					<option key={dogRace.id} value={dogRace.value}>
-						{dogRace.value}
-					</option>
-				))}
-			</SelectGroup>
-			<button
-				type="button"
-				onClick={(e) => { setCurrentDogRace({ ...currentDogRace, id: nanoid() }); }}
-			>
-				{' '}
-				Fetch another one!
+		<Container width={width} height={height} className="FormContainer">
+			<SelectContainer className="SelectorContainer">
+				<Select
+					className="Select"
+					value={selectedValue}
+					onChange={(e) => onChangeSelectHandler(e)}
 
-			</button>
+				>
+					{list.map((dogRace) => (
+						<option key={dogRace.id} value={dogRace.value}>
+							{dogRace.value}
+						</option>
+					))}
+				</Select>
+			</SelectContainer>
+			<Button
+				type="button"
+				onClick={() => { setCurrentDogRace({ ...currentDogRace }); }}
+			>
+				Fetch another one!
+			</Button>
+
 		</Container>
 	);
 };

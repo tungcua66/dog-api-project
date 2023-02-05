@@ -6,6 +6,8 @@ const Container = styled.img(({ width = '500px', height = '500px' }) => ({
 	width,
 	height,
 	margin: '5px',
+	boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+	borderRadius: '10px',
 }));
 
 const ImageContainer = ({ dogRace }) => {

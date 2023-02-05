@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import Form from './components/Form';
 import ImageContainer from './components/ImageContainer';
@@ -7,9 +7,11 @@ import { dogRaces } from './data/dogRaces';
 const Container = styled.div(() => ({
 	display: 'flex',
 	flexDirection: 'column',
-	justifyContent: 'space-around',
+	justifyContent: 'center',
 	alignItems: 'center',
 	gap: '2px',
+	backgroundColor: '#071e22',
+	height: '100vh',
 }));
 
 const App = () => {
@@ -19,7 +21,7 @@ const App = () => {
 			<h1> Dog viewer</h1>
 			<Form
 				width="400px"
-				height="50px"
+				height="70px"
 				list={dogRaces}
 				currentDogRace={currentDogRace}
 				setCurrentDogRace={setCurrentDogRace}
