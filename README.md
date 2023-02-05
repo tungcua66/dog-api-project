@@ -7,16 +7,20 @@ API used in this project: [Dog Api](https://dog.ceo/dog-api)
 
 In the project directory, run to install all the necessary libraries in package.json:
 
-### `yarn`
+```bash
+yarn
+```
 
-## Scripts
+## To Launch the project
 
-### `yarn start`
+```bash
+yarn start
+```
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 
 ## Prerequisite
 
@@ -25,7 +29,7 @@ The page will reload when you make changes.\
 ## More info
 
 ### List of the available dog breed :
-- Stored in '/data/dogRaces.js'
+- Stored in './data/dogRaces.js'
 
 ### Libraries used:
 
