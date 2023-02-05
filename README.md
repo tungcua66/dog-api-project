@@ -35,4 +35,6 @@ The page will reload when you make changes.
 
 - fetch: [axios](https://yarnpkg.com/package/axios)
 - css framework: [emotionJS](https://emotion.sh/docs/introduction)
+- unique string ID generator: [nanoID](https://www.npmjs.com/package/nanoid)
+- linter: [eslint-config-airbnb](https://yarnpkg.com/package/eslint-config-airbnb)
 
