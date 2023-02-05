@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import { styleOne } from '../styles/buttonStyles';
-// import Button from './Button';
 
 const Container = styled.div(({ width, height }) => ({
 	width,

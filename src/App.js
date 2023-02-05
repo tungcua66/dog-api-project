@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Form from './components/Form';
 import ImageContainer from './components/ImageContainer';
 import { dogRaces } from './data/dogRaces';
+import dogIcon from './assets/paw.png';
 
 const Container = styled.div(() => ({
 	display: 'flex',
@@ -18,7 +19,8 @@ const App = () => {
 	const [currentDogRace, setCurrentDogRace] = useState(dogRaces[0]);
 	return (
 		<Container className="App">
-			<h1> Dog viewer</h1>
+			<img src={dogIcon} alt="dogIcon" width="100px" height="100px" />
+			<h1 style={{ color: 'white' }}> Dog viewer</h1>
 			<Form
 				width="400px"
 				height="70px"
